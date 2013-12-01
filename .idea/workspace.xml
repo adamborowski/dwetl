@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc3e0d27-817b-4f73-af10-3d46ced6b277" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/go-merge_unneeded.py" afterPath="$PROJECT_DIR$/go-merge_unneeded.py" />
+      <change type="DELETED" beforePath="C:\Users\Adam\Documents\GitHub\dwetl\dw_godziny.txt.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_data_for_etl.py" afterPath="$PROJECT_DIR$/generate_data_for_etl.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rolap.sql" afterPath="$PROJECT_DIR$/rolap.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dwetl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +31,7 @@
       <file leaf-file-name="generate_data_for_etl.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generate_data_for_etl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="4" selection-start="64" selection-end="64" vertical-scroll-proportion="0.14782609" vertical-offset="0" max-vertical-offset="646">
+            <state line="40" column="58" selection-start="2448" selection-end="2448" vertical-scroll-proportion="0.7782609" vertical-offset="322" max-vertical-offset="782">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -345,7 +348,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generate_data_for_etl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="4" selection-start="64" selection-end="64" vertical-scroll-proportion="0.14782609" vertical-offset="0" max-vertical-offset="646">
+        <state line="40" column="58" selection-start="2448" selection-end="2448" vertical-scroll-proportion="0.7782609" vertical-offset="322" max-vertical-offset="782">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

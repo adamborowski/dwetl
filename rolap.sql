@@ -1,3 +1,4 @@
+
 CREATE DATABASE restaurante
 GO
 
@@ -49,7 +50,7 @@ CREATE TABLE Restauracje (
 
 CREATE TABLE Platnosci (
   id_platnosci INTEGER IDENTITY(1,1) PRIMARY KEY,
-  platnosc NVARCHAR(26) NOT NULL
+  platnosc NVARCHAR(40) NOT NULL
 );
 
 -- tabela faktów
