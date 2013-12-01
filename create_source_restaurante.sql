@@ -1,3 +1,4 @@
+
 create database source_restaurante;
 go
 USE source_restaurante;
@@ -17,7 +18,7 @@ CREATE TABLE Kelnerzy (
   id_przelozonego INT REFERENCES Kelnerzy,	
   nazwisko VARCHAR(64) NOT NULL,
   imie VARCHAR(32) NOT NULL,
-  wyksztalcenie INT NOT NULL,
+  wyksztalcenie VARCHAR(64) NOT NULL,
   data_zatrudnienia DATE NOT NULL
 );
 
@@ -40,7 +41,7 @@ CREATE TABLE Kategorie (
 CREATE TABLE Dania (
   id INT PRIMARY KEY,
   id_kategorii INT REFERENCES Kategorie NOT NULL,
-  nazwa VARCHAR(64) NOT NULL,
+  nazwa VARCHAR(128) NOT NULL,
   cena DECIMAL(7, 2) NOT NULL,
   porcja SMALLINT NOT NULL,
   jednostka CHAR(3) NOT NULL,
