@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{D98A63DC-B2E2-457F-AB39-0BF0C9B1F86F}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{7D9F7EE2-1330-4933-A9D7-988CF13F0CD7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1257,19 +1257,19 @@
               startId="Package\Generuj Dania\dania z kategoriami.Outputs[Merge Join Output]" />
             <path
               refId="Package\Generuj Dania.Paths[OLE DB Source Output1]"
-              endId="Package\Generuj Dania\Sort 1.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Generuj Dania\Kategorie.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Generuj Dania.Paths[OLE DB Source Output]"
               endId="Package\Generuj Dania\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Generuj Dania\Dania.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Generuj Dania.Paths[OLE DB Source Output]"
+              endId="Package\Generuj Dania\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Generuj Dania\Kategorie.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Generuj Dania.Paths[Sort Output2]"
-              endId="Package\Generuj Dania\dania z kategoriami.Inputs[Merge Join Right Input]"
+              endId="Package\Generuj Dania\koniec.Inputs[Union All Input 2]"
               name="Sort Output"
-              startId="Package\Generuj Dania\Sort 1.Outputs[Sort Output]" />
+              startId="Package\Generuj Dania\posortowane gotowe dania.Outputs[Sort Output]" />
             <path
               refId="Package\Generuj Dania.Paths[Sort Output1]"
               endId="Package\Generuj Dania\dania z kategoriami.Inputs[Merge Join Left Input]"
@@ -1277,9 +1277,9 @@
               startId="Package\Generuj Dania\Sort.Outputs[Sort Output]" />
             <path
               refId="Package\Generuj Dania.Paths[Sort Output]"
-              endId="Package\Generuj Dania\koniec.Inputs[Union All Input 2]"
+              endId="Package\Generuj Dania\dania z kategoriami.Inputs[Merge Join Right Input]"
               name="Sort Output"
-              startId="Package\Generuj Dania\posortowane gotowe dania.Outputs[Sort Output]" />
+              startId="Package\Generuj Dania\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1288,6 +1288,7 @@
       DTS:refId="Package\Generuj Godziny dla restauracji"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{73F79BAC-9605-49DB-9EF0-6929ACFA89AE}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -3289,112 +3290,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               version="1">
               <inputs>
                 <input
-                  refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[id]"
-                      cachedDataType="i4"
-                      cachedName="id"
-                      lineageId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Outputs[Merge Join Output].Columns[id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[id_src]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[pora_dnia]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="pora_dnia"
-                      lineageId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Outputs[Merge Join Output].Columns[pora_dnia]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[pora_dnia_src]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[godzina]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="godzina"
-                      lineageId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Outputs[Merge Join Output].Columns[godzina]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[godzina_src]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[nazwa]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="32"
-                      cachedName="nazwa"
-                      lineageId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Outputs[Merge Join Output].Columns[nazwa]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[nazwa]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[godzina_zamkniecia]"
-                      cachedDataType="ui1"
-                      cachedName="godzina_zamkniecia"
-                      lineageId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Outputs[Merge Join Output].Columns[godzina_zamkniecia]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[godzina_zamkniecia]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[godzina_otwarcia]"
-                      cachedDataType="ui1"
-                      cachedName="godzina_otwarcia"
-                      lineageId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Outputs[Merge Join Output].Columns[godzina_otwarcia]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[godzina_otwarcia]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1].Columns[stan_restauracji]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="stan_restauracji"
-                      lineageId="Package\Generuj Godziny dla restauracji\+ stan restauracji.Outputs[Output 0].Columns[stan_restauracji]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Generuj Godziny dla restauracji\Union All.Outputs[Union All Output 1].Columns[stan_restauracji]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
                   refId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 2]"
                   dangling="true"
                   hasSideEffects="true"
@@ -3459,14 +3354,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           <paths>
             <path
               refId="Package\Generuj Godziny dla restauracji.Paths[Derived Column Output1]"
-              endId="Package\Generuj Godziny dla restauracji\Sort 1.Inputs[Sort Input]"
-              name="Derived Column Output"
-              startId="Package\Generuj Godziny dla restauracji\dodaj dummy2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Generuj Godziny dla restauracji.Paths[Derived Column Output]"
               endId="Package\Generuj Godziny dla restauracji\Sort.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Generuj Godziny dla restauracji\dodaj dummy.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Generuj Godziny dla restauracji.Paths[Derived Column Output]"
+              endId="Package\Generuj Godziny dla restauracji\Sort 1.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Generuj Godziny dla restauracji\dodaj dummy2.Outputs[Derived Column Output]" />
             <path
               refId="Package\Generuj Godziny dla restauracji.Paths[Flat File Source Output]"
               endId="Package\Generuj Godziny dla restauracji\dodaj dummy2.Inputs[Derived Column Input]"
@@ -3483,20 +3378,1520 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               name="OLE DB Source Output"
               startId="Package\Generuj Godziny dla restauracji\restauracje.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Generuj Godziny dla restauracji.Paths[Output 0]"
-              endId="Package\Generuj Godziny dla restauracji\Union All.Inputs[Union All Input 1]"
-              name="Output 0"
-              startId="Package\Generuj Godziny dla restauracji\+ stan restauracji.Outputs[Output 0]" />
-            <path
-              refId="Package\Generuj Godziny dla restauracji.Paths[Sort Output]"
+              refId="Package\Generuj Godziny dla restauracji.Paths[Sort Output1]"
               endId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Generuj Godziny dla restauracji\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Generuj Godziny dla restauracji.Paths[Sort Output1]"
+              refId="Package\Generuj Godziny dla restauracji.Paths[Sort Output]"
               endId="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Generuj Godziny dla restauracji\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generuj Kelnerów"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5BF98CA3-84E1-4EB2-9528-DB020C24A07D}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generuj Kelnerów"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Generuj Kelnerów\OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generuj Kelnerów\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB SOURCE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB SOURCE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Generuj Kelnerów\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\Generuj Kelnerów\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generuj Kelnerów\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generuj Kelnerów\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generuj Kelnerów\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generuj Kelnerów\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generuj Restauracje"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3E081A43-524E-43FC-84FB-114A4C2A5BD5}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generuj Restauracje"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Adres -&gt; Województwo, Miasto"
+              version="8">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using System.Text.RegularExpressions;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+        initPolska();
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        string  miasto = regex.Match(Row.adres).Groups[0].Value;
+        Row.miasto=miasto;
+        if(getWojewocztwoByMiasto.ContainsKey(miasto))
+        {
+            Row.wojewodztwo=getWojewocztwoByMiasto[miasto];
+        }
+        else {
+            Row.wojewodztwo="nie przydzielono";
+        }
+    }
+    public Regex regex = new Regex(@"(?<=\d\d-\d\d\d )(.*)");
+    public Dictionary<String, List<String>> polska;
+    public Dictionary<String, String> getWojewocztwoByMiasto;
+    public void initPolska()
+    {
+        polska = new Dictionary<string, List<string>>();
+        polska.Add("pomorskie", new List<string> { "Gdynia", "Gdańsk", "Chojnice" });
+        polska.Add("kujawsko-pomorskie", new List<string> { "Bydgoszcz", "Toruń", "Świecie", "Barcin", "Przedecz", "Tuchola" });
+        polska.Add("śląskie", new List<string> { "Piekary Śląskie", "Katowice" });
+        polska.Add("lubuskie", new List<string> {"Lubniewice", "Lubin" });
+        polska.Add("podkarpackie", new List<string> { "Stalowa Wola"});
+        polska.Add("dolnośląskie", new List<string> {"Nowa Ruda"});
+        polska.Add("mazowieckie", new List<string> { "Ząbki", "Warszawa", "Ostrów Mazowiecka"});
+        polska.Add("zachodniopomorskie", new List<string> { "Recz", "Szczecin" });
+        polska.Add("łódzkie", new List<string> { "Łódź", "Przedbórz" });
+        polska.Add("podlaskie", new List<string> { "Białystok", "Krynki" });
+
+
+        ///
+
+        getWojewocztwoByMiasto = new Dictionary<string, string>();
+        foreach(var woj in polska)
+        {
+            foreach(var miasto in woj.Value)
+            {
+                getWojewocztwoByMiasto.Add(miasto, woj.Key);
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String nazwa
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool nazwa_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String adres
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool adres_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public String miasto
+    {
+        set
+        {
+            this[2] = value;
+        }
+    }
+    public bool miasto_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(2);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String wojewodztwo
+    {
+        set
+        {
+            this[3] = value;
+        }
+    }
+    public bool wojewodztwo_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(3);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties.Settings.get_Default():SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties.Sett" +
+    "ings")]
+
+namespace SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_48e0cb17a23b4e44b2e11fd0edb8f684</msb:CodeName>
+		<msb:DisplayName>SC_48e0cb17a23b4e44b2e11fd0edb8f684</msb:DisplayName>
+		<msb:ProjectId>{379D3266-540F-4692-AFE4-6256BF5DD097}</msb:ProjectId>
+		<msb:Language>msBuild</msb:Language>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_48e0cb17a23b4e44b2e11fd0edb8f684.csproj"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_48e0cb17a23b4e44b2e11fd0edb8f684")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("SC_48e0cb17a23b4e44b2e11fd0edb8f684")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2013")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_48e0cb17a23b4e44b2e11fd0edb8f684.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84B63254-0AF0-439E-A7CB-DEA381FACACB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_48e0cb17a23b4e44b2e11fd0edb8f684</RootNamespace>
+    <AssemblyName>SC_48e0cb17a23b4e44b2e11fd0edb8f684</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="devenv.exe" DebugInfoCommandLine="/vstaHostDebugUri:&quot;vstadebug25cdff08-bb3e-4574-b626-3eef885ccbbb/51525fe9-d311-48bc-83ed-cea9d8ef1173&quot;" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_48e0cb17a23b4e44b2e11fd0edb8f684.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_48e0cb17a23b4e44b2e11fd0edb8f684.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANdjm1IAAAAAAAAAAOAAAiELAQgAAB4AAAAIAAAAAAAArjwA
+AAAgAAAAQAAAAABAAAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFg8AABTAAAAAEAAAFAEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAtBwAAAAgAAAAHgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAFAEAAAAQAAAAAYAAAAgAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACQ
+PAAAAAAAAEgAAAACAAUA2CUAAIAWAAABAAAAAAAAACAlAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKA0AAAoCAnMVAAAGfQEAAAQCAnMWAAAGfQIAAAQqkgRy
+AQAAcBpvDgAACiwVAgUCAygPAAAKDgRzCgAABm8DAAAGKkorBwIDbwQAAAYDbxMAAAYt8SoGKjYC
+KBEAAAoCKAgAAAYqHgIoEgAACioTMAMAVgAAAAEAABECewMAAAQDbw0AAAZvEwAACm8UAAAKFm8V
+AAAKbxYAAAoKAwZvDwAABgJ7BQAABAZvFwAACiwTAwJ7BQAABAZvGAAACm8RAAAGKgNyEQAAcG8R
+AAAGKgAAGzAEAJgCAAACAAARAnMZAAAKfQQAAAQCewQAAARyMwAAcHMaAAAKDAhyRwAAcG8bAAAK
+CHJVAABwbxsAAAoIcmMAAHBvGwAACghvHAAACgJ7BAAABHJ1AABwcxoAAAoNCXKbAABwbxsAAAoJ
+cq8AAHBvGwAACglyuwAAcG8bAAAKCXLLAABwbxsAAAoJctkAAHBvGwAACgly6wAAcG8bAAAKCW8c
+AAAKAnsEAAAEcvsAAHBzGgAAChMEEQRyCwEAcG8bAAAKEQRyKwEAcG8bAAAKEQRvHAAACgJ7BAAA
+BHI9AQBwcxoAAAoTBREFck8BAHBvGwAAChEFcmUBAHBvGwAAChEFbxwAAAoCewQAAARycQEAcHMa
+AAAKEwYRBnKLAQBwbxsAAAoRBm8cAAAKAnsEAAAEcqUBAHBzGgAAChMHEQdyvwEAcG8bAAAKEQdv
+HAAACgJ7BAAABHLTAQBwcxoAAAoTCBEIcusBAHBvGwAAChEIcvcBAHBvGwAAChEIcgkCAHBvGwAA
+ChEIbxwAAAoCewQAAARyLQIAcHMaAAAKEwkRCXJTAgBwbxsAAAoRCXJdAgBwbxsAAAoRCW8cAAAK
+AnsEAAAEcm8CAHBzGgAAChMKEQpyfwIAcG8bAAAKEQpyiQIAcG8bAAAKEQpvHAAACgJ7BAAABHKd
+AgBwcxoAAAoTCxELcrECAHBvGwAAChELcsUCAHBvGwAAChELbxwAAAoCcx0AAAp9BQAABAJ7BAAA
+BG8eAAAKEwwrTBIMKB8AAAoKEgAoIAAACm8hAAAKEw0rGxINKCIAAAoLAnsFAAAEBxIAKCMAAApv
+JAAAChINKCUAAAot3N4OEg3+FgYAABtvJgAACtwSDCgnAAAKLaveDhIM/hYEAAAbbyYAAArcKgEc
+AAACAEgCKHACDgAAAAACADACWYkCDgAAAABeAnLTAgBwcygAAAp9AwAABAIoAQAABioqAgMEBSgp
+AAAKKlICeyoAAAoCeysAAAoWlG8sAAAKKiICFigtAAAKKlICeyoAAAoCeysAAAoXlG8sAAAKKiIC
+FygtAAAKKiYCGAMoLgAACipaAywIAhgoLwAACipy/wIAcHMwAAAKeiYCGQMoLgAACipaAywIAhko
+LwAACipy/wIAcHMwAAAKeh4CKDEAAAoqHgIoMgAACio6AigzAAAKAgN9BgAABCo6AigzAAAKAgN9
+BwAABCoeAigzAAAKKgATMAMALQAAAAMAABF+CAAABC0gcpwDAHDQBwAAAig1AAAKbzYAAApzNwAA
+CgoGgAgAAAR+CAAABCoafgkAAAQqHgKACQAABCoafgoAAAQqLnMcAAAGgAoAAAQqHgIoOgAACioA
+tAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2Nvcmxp
+YiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1
+YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAA
+AABQQURQQURQtAAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAANgGAAAjfgAA
+RAcAAGgIAAAjU3RyaW5ncwAAAACsDwAAEAQAACNVUwC8EwAAEAAAACNHVUlEAAAAzBMAALQCAAAj
+QmxvYgAAAAAAAAACAAABVxWiCQkBAAAA+iUzABYAAAEAAAAqAAAACAAAAAoAAAAdAAAAEQAAADoA
+AAAPAAAAAwAAAAMAAAALAAAADAAAAAYAAAABAAAABAAAAAEAAAAAAAoAAQAAAAAABgDuAM0ABgD+
+AM0ACgAbARQBDgA3ASIBEgB2Ac0ABgCFAc0ADgABAuIBCgAoAg0CCgA1Ag0CCgBuA10DCgCfA4oD
+CgB4BF4ECgCjBJEECgC6BJEECgDXBJEECgD2BJEECgAPBZEECgAoBZEECgBDBZEECgBeBZEECgB3
+BZEECgCwBZAFCgDQBZAFCgASBhQBCgAZBhQBBgBCBs0ADgBpBuIBDgBvBuIBDgCKBuIBDgCZBuIB
+IwC7BgAACgDUBg0CJwC7BgAACgAABxQBCgA2BxQBCgBjB1AHCgCABxQBCgCFBxQBCgCpB5EEDgDV
+B78HDgDuB78HCgADCJAFAAAAAAEAAAAAAAEAAQABABAAMgAAAAUAAQABAAEAEABAAAAACAADAAUA
+AQAQAEsAAAAJAAYACgABABAAWAAAAA0ABgAVAAEAEABkAAAADQAHABYAAAAQAG4AeAANAAgAFwAA
+ARAApwB4ABEACgAbAAYAWAATAAYAZAAXAAYABwIvAAYAPAIzAAYAQwI/AAEATQNrAAEATQNrABEA
+fgN1ABEAqwN5ABEA7wOXAFAgAAAAAIYYTwEbAAEAcCAAAAAAxgCTAR8AAQCVIAAAAADGAaABKQAF
+AKggAAAAAMYBtAEpAAYAqiAAAAAAxgDLARsABwC4IAAAAADGANYBGwAHAMAgAAAAAMYAtAEpAAcA
+JCEAAAAAhgBaAhsACADkIwAAAACGGE8BGwAIAPwjAAAAAIYYTwFHAAgAByQAAAAAhghlAlEACwAc
+JAAAAACGCG8CVQALACUkAAAAAIYIgAJRAAsAOiQAAAAAhgiKAlUACwBDJAAAAACGCJsCWQALAE0k
+AAAAAIYIpgJeAAwAZCQAAAAAhgi4AlkADQBuJAAAAACGCMgCXgAOAIUkAAAAAIYA3wJVAA8AjSQA
+AAAAhgDnAlUADwCVJAAAAACGGE8BbwAPAKQkAAAAAIYYTwFvABAAsyQAAAAAgxhPARsAEQC8JAAA
+AACTCLsDfQARAPUkAAAAAJMIzwOCABEA/CQAAAAAkwjbA4cAEQAEJQAAAACWCP8DmwASABclAAAA
+AIYYTwEbABIACyUAAAAAkRgeCOIBEgAAAAEAEwQAAAIAGwQAAAMAJQQAAAQALAQAAAEAJQQAAAEA
+NgQAAAEANgQAAAEAJQQAAAIAOgQAAAMALAQAAAEATgQAAAEATgQAAAEATgQAAAEATgQAAAEAVAQA
+AAEAVAQAAAEATgRhAE8BWQBpAE8BWQBxAE8BWQB5AE8BWQCBAE8BWQCJAE8BWQCRAE8BWQCZAE8B
+WQChAE8BWQCpAE8BWQCxAE8BpQC5AE8BGwAJAE8BGwDBACoGqgAJADEGsQDRAE8BGwAJAMsBGwAJ
+ANYBGwA5AGkGvADZAH8GwgDhAJAGxwDxAKEGUQAMAKsG1AAMAJAG2gAUAE8BGwAcAE8BGwAcALcG
+9gAUALcG/AAMAE8BGwAUAMYGBAEkAOMGGgEsAKEGMgEcAMYGNwE0AOMGSAEsAO8GSAEMALcG/AA0
+APcGVQARAQwHGwAkAPcGVQA5AE8BWQARAE8BRwARACUEngERADoEogEpABQHpgERAB4HqwERACUH
+sAERAC4HpQAZAU8BWQARAN8CVQARAOcCVQAZAE8BGwAhAU8BGwApAZcHtgEpAbIHvwFRAE8BxQFB
+AU8B0gFRAU8BGwAhAE8BGwAuABsAVwIuAGMAlQIuAAsA5gEuABMALgIuACMAVwIuACsAXQIuADMA
+LgIuADsAbAIuAEMAVwIuAFsAjAJjAIMAtwDjAKMBtwApAcMB2QFBAcsBtwBJAcMB2QHhAE0BzQEE
+AAEABwAJAAgACwAAAPMCYwAAAPkCZwAAAAYDYwAAAAwDZwAAABkDYwAAACADZwAAAC4DYwAAADoD
+ZwAAAG4DjQAAAOcDkgAAAAsEoAACAAsAAwACAAwABQACAA0ABwACAA4ACQABAA8ACwABABAADQAB
+ABEADwABABIAEQACABgAEwACABkAFQABABoAFQACABsAFwDNAOUA8AAPASYBQQEEgAAAAQAAANsT
+83oAAAAAAADuBQAACwAAAAAAAAAAAAAAAQCwAAAAAAAEAAAAAAAAAAAAAAAKAAsBAAAAAAQAAAAA
+AAAAAAAAAAoAFAEAAAAACwAAAAAAAAAAAAAAAQBVAQAAAAAAAAAAAQAAACUIAAAAAAA8TW9kdWxl
+PgBTQ180OGUwY2IxN2EyM2I0ZTQ0YjJlMTFmZDBlZGI4ZjY4NC5kbGwAVXNlckNvbXBvbmVudABT
+Y3JpcHRNYWluAElucHV0MEJ1ZmZlcgBDb25uZWN0aW9ucwBWYXJpYWJsZXMAUmVzb3VyY2VzAFND
+XzQ4ZTBjYjE3YTIzYjRlNDRiMmUxMWZkMGVkYjhmNjg0LlByb3BlcnRpZXMAU2V0dGluZ3MATWlj
+cm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGlu
+ZQBTY3JpcHRDb21wb25lbnQAU2NyaXB0QnVmZmVyAG1zY29ybGliAFN5c3RlbQBPYmplY3QAU3lz
+dGVtLkNvbmZpZ3VyYXRpb24AQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UALmN0b3IATWljcm9zb2Z0
+LlNxbFNlcnZlci5QaXBlbGluZUhvc3QAUGlwZWxpbmVCdWZmZXIAT3V0cHV0TmFtZU1hcABQcm9j
+ZXNzSW5wdXQASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AFByZUV4
+ZWN1dGUAUG9zdEV4ZWN1dGUAU3lzdGVtLlRleHQuUmVndWxhckV4cHJlc3Npb25zAFJlZ2V4AHJl
+Z2V4AFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljAERpY3Rpb25hcnlgMgBMaXN0YDEAcG9sc2th
+AGdldFdvamV3b2N6dHdvQnlNaWFzdG8AaW5pdFBvbHNrYQBnZXRfbmF6d2EAZ2V0X25hendhX0lz
+TnVsbABnZXRfYWRyZXMAZ2V0X2FkcmVzX0lzTnVsbABzZXRfbWlhc3RvAHNldF9taWFzdG9fSXNO
+dWxsAHNldF93b2pld29kenR3bwBzZXRfd29qZXdvZHp0d29fSXNOdWxsAE5leHRSb3cARW5kT2ZS
+b3dzZXQAbmF6d2EAbmF6d2FfSXNOdWxsAGFkcmVzAGFkcmVzX0lzTnVsbABtaWFzdG8AbWlhc3Rv
+X0lzTnVsbAB3b2pld29kenR3bwB3b2pld29kenR3b19Jc051bGwAUGFyZW50Q29tcG9uZW50AFN5
+c3RlbS5SZXNvdXJjZXMAUmVzb3VyY2VNYW5hZ2VyAHJlc291cmNlTWFuAFN5c3RlbS5HbG9iYWxp
+emF0aW9uAEN1bHR1cmVJbmZvAHJlc291cmNlQ3VsdHVyZQBnZXRfUmVzb3VyY2VNYW5hZ2VyAGdl
+dF9DdWx0dXJlAHNldF9DdWx0dXJlAEN1bHR1cmUAZGVmYXVsdEluc3RhbmNlAGdldF9EZWZhdWx0
+AERlZmF1bHQASW5wdXRJRABJbnB1dE5hbWUAQnVmZmVyAE91dHB1dE1hcABSb3cAQnVmZmVyQ29s
+dW1uSW5kZXhlcwB2YWx1ZQBDb21wb25lbnQAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUYXJn
+ZXRGcmFtZXdvcmtBdHRyaWJ1dGUAU3lzdGVtLlJlZmxlY3Rpb24AQXNzZW1ibHlUaXRsZUF0dHJp
+YnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0
+dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRl
+AEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAEFz
+c2VtYmx5Q3VsdHVyZUF0dHJpYnV0ZQBBc3NlbWJseVZlcnNpb25BdHRyaWJ1dGUAU3lzdGVtLlJ1
+bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAFJ1
+bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFNDXzQ4ZTBjYjE3YTIzYjRlNDRiMmUxMWZkMGVk
+YjhmNjg0AFN0cmluZwBTdHJpbmdDb21wYXJpc29uAEVxdWFscwBHZXRDb2x1bW5JbmRleGVzAFNT
+SVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAE1hdGNoAEdyb3VwQ29sbGVjdGlv
+bgBnZXRfR3JvdXBzAEdyb3VwAGdldF9JdGVtAENhcHR1cmUAZ2V0X1ZhbHVlAENvbnRhaW5zS2V5
+AEFkZABFbnVtZXJhdG9yAEdldEVudW1lcmF0b3IAS2V5VmFsdWVQYWlyYDIAZ2V0X0N1cnJlbnQA
+Z2V0X0tleQBNb3ZlTmV4dABJRGlzcG9zYWJsZQBEaXNwb3NlAEdldFN0cmluZwBJc051bGwAc2V0
+X0l0ZW0AU2V0TnVsbABJbnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAFN5c3RlbS5EaWFnbm9zdGlj
+cwBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAFR5cGUAUnVudGltZVR5cGVIYW5kbGUAR2V0
+VHlwZUZyb21IYW5kbGUAQXNzZW1ibHkAZ2V0X0Fzc2VtYmx5AFN5c3RlbS5Db21wb25lbnRNb2Rl
+bABFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJH
+ZW5lcmF0ZWRBdHRyaWJ1dGUALmNjdG9yAFNDXzQ4ZTBjYjE3YTIzYjRlNDRiMmUxMWZkMGVkYjhm
+Njg0LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwAAD0kAbgBwAHUAdAAgADAAACFuAGkA
+ZQAgAHAAcgB6AHkAZAB6AGkAZQBsAG8AbgBvAAATcABvAG0AbwByAHMAawBpAGUAAA1HAGQAeQBu
+AGkAYQAADUcAZABhAEQBcwBrAAERQwBoAG8AagBuAGkAYwBlAAAlawB1AGoAYQB3AHMAawBvAC0A
+cABvAG0AbwByAHMAawBpAGUAARNCAHkAZABnAG8AcwB6AGMAegAAC1QAbwByAHUARAEBD1oBdwBp
+AGUAYwBpAGUAAQ1CAGEAcgBjAGkAbgAAEVAAcgB6AGUAZABlAGMAegAAD1QAdQBjAGgAbwBsAGEA
+AA9bAWwABQFzAGsAaQBlAAEfUABpAGUAawBhAHIAeQAgAFoBbAAFAXMAawBpAGUAARFLAGEAdABv
+AHcAaQBjAGUAABFsAHUAYgB1AHMAawBpAGUAABVMAHUAYgBuAGkAZQB3AGkAYwBlAAALTAB1AGIA
+aQBuAAAZcABvAGQAawBhAHIAcABhAGMAawBpAGUAABlTAHQAYQBsAG8AdwBhACAAVwBvAGwAYQAA
+GWQAbwBsAG4AbwBbAWwABQFzAGsAaQBlAAETTgBvAHcAYQAgAFIAdQBkAGEAABdtAGEAegBvAHcA
+aQBlAGMAawBpAGUAAAtaAAUBYgBrAGkAARFXAGEAcgBzAHoAYQB3AGEAACNPAHMAdAByAPMAdwAg
+AE0AYQB6AG8AdwBpAGUAYwBrAGEAASV6AGEAYwBoAG8AZABuAGkAbwBwAG8AbQBvAHIAcwBrAGkA
+ZQAACVIAZQBjAHoAABFTAHoAYwB6AGUAYwBpAG4AAA9CAfMAZAB6AGsAaQBlAAEJQQHzAGQAegEB
+E1AAcgB6AGUAZABiAPMAcgB6AAETcABvAGQAbABhAHMAawBpAGUAABNCAGkAYQBCAXkAcwB0AG8A
+awABDUsAcgB5AG4AawBpAAArKAA/ADwAPQBcAGQAXABkAC0AXABkAFwAZABcAGQAIAApACgALgAq
+ACkAAYCbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAg
+AHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUA
+IAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAABxUwBDAF8ANAA4
+AGUAMABjAGIAMQA3AGEAMgAzAGIANABlADQANABiADIAZQAxADEAZgBkADAAZQBkAGIAOABmADYA
+OAA0AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAAhvacFzoGlL
+tMln1VOQ+fMACImEXc2AgMyRCLd6XFYZNOCJAwYSFAMGEhgDIAABCSAEAQgOEhUSGQUgAQESEAMG
+Eh0LBhUSIQIOFRIlAQ4HBhUSIQIODgkgAwESFR0IEhkDIAAOAyAAAgQgAQEOBCABAQIDKAAOAygA
+AgMGEgUFIAEBEgUDBhIpAwYSLQQAABIpBAAAEi0FAAEBEi0ECAASKQQIABItAwYSIAQAABIgBAgA
+EiAEIAEBCAYgAgIOEWUFIAEdCAgEAQAAAAUgARJtDgQgABJxBSABEnUIBhUSIQIODgUgAQITAAYg
+ARMBEwADBwEOChUSIQIOFRIlAQ4FFRIlAQ4FIAEBEwAHIAIBEwATAQogABURfQITABMBChURfQIO
+FRIlAQ4LIAAVEYCBAhMAEwELFRGAgQIOFRIlAQ4EIAATAQkgABURgIUBEwAGFRGAhQEOBCAAEwBQ
+Bw4VEYCBAg4VEiUBDg4VEiUBDhUSJQEOFRIlAQ4VEiUBDhUSJQEOFRIlAQ4VEiUBDhUSJQEOFRIl
+AQ4VEiUBDhURfQIOFRIlAQ4VEYCFAQ4DBhIVAwYdCAQgAQ4IBCABAggFIAIBCBwIAAESgJURgJkF
+IAASgJ0HIAIBDhKAnQQHARIpBiABARGApQgBAAIAAAAAAAMAAAFHAQAaLk5FVEZyYW1ld29yayxW
+ZXJzaW9uPXY0LjABAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEC5ORVQgRnJhbWV3b3JrIDQoAQAj
+U0NfNDhlMGNiMTdhMjNiNGU0NGIyZTExZmQwZWRiOGY2ODQAAAUBAAAAAA4BAAlNaWNyb3NvZnQA
+AB8BABpDb3B5cmlnaHQgQCBNaWNyb3NvZnQgMjAxMwAACAEACAAAAAAAHgEAAQBUAhZXcmFwTm9u
+RXhjZXB0aW9uVGhyb3dzAYA8AAAAAAAAAAAAAJ48AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQ
+PAAAAAAAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIEAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
+EAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABY
+QAAA+AMAAAAAAAAAAAAA+AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E
+7/4AAAEAAAABAPN62xMAAAEA83rbEz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBW
+AGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAA
+AACwBFgDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAADQDAAABADAAMAAwADAAMAA0
+AGIAMAAAADQACgABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAAAAAATQBpAGMAcgBvAHMAbwBmAHQA
+AABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBDAF8ANAA4AGUAMABj
+AGIAMQA3AGEAMgAzAGIANABlADQANABiADIAZQAxADEAZgBkADAAZQBkAGIAOABmADYAOAA0AAAA
+QAAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADUAMAA4ADMALgAzADEANAA3
+ADUAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8ANAA4AGUAMABjAGIA
+MQA3AGEAMgAzAGIANABlADQANABiADIAZQAxADEAZgBkADAAZQBkAGIAOABmADYAOAA0AC4AZABs
+AGwAAABcABsAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgA
+dAAgAEAAIABNAGkAYwByAG8AcwBvAGYAdAAgADIAMAAxADMAAAAAAHgAKAABAE8AcgBpAGcAaQBu
+AGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA0ADgAZQAwAGMAYgAxADcAYQAyADMAYgA0AGUA
+NAA0AGIAMgBlADEAMQBmAGQAMABlAGQAYgA4AGYANgA4ADQALgBkAGwAbAAAAGgAJAABAFAAcgBv
+AGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8ANAA4AGUAMABjAGIAMQA3AGEAMgAzAGIANABlADQA
+NABiADIAZQAxADEAZgBkADAAZQBkAGIAOABmADYAOAA0AAAARAAPAAEAUAByAG8AZAB1AGMAdABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADAAOAAzAC4AMwAxADQANwA1AAAAAABIAA8AAQBBAHMA
+cwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADAAOAAzAC4AMwAxADQANwA1
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAALA8AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_48e0cb17a23b4e44b2e11fd0edb8f684</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum"
+                  typeConverter="NOTBROWSABLE">ff8682a4cf2b16ffb2a1e79fb848da7b</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Inputs[Input 0].Columns[nazwa]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="nazwa"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[nazwa]" />
+                    <inputColumn
+                      refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Inputs[Input 0].Columns[adres]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="adres"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[adres]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Inputs[Input 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[miasto]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[miasto]"
+                      name="miasto" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[wojewodztwo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[wojewodztwo]"
+                      name="wojewodztwo" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generuj Restauracje\Restauracje"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Restauracje"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Restauracje]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generuj Restauracje\Restauracje.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB SOURCE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB SOURCE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[nazwa]"
+                      length="32"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[nazwa]"
+                      name="nazwa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[adres]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[adres]"
+                      length="255"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[adres]"
+                      name="adres"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      name="nazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[adres]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="adres" />
+                    <externalMetadataColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[godzina_otwarcia]"
+                      dataType="ui1"
+                      name="godzina_otwarcia" />
+                    <externalMetadataColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[godzina_zamkniecia]"
+                      dataType="ui1"
+                      name="godzina_zamkniecia" />
+                    <externalMetadataColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].ExternalColumns[liczba_miejsc]"
+                      dataType="i2"
+                      name="liczba_miejsc" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[nazwa]"
+                      name="nazwa" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[adres]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[adres]"
+                      name="adres" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generuj Restauracje\Sort"
+              componentClassID="{5B1A3FF5-D366-4D75-AD1F-F19A36FCBEDB}"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Generuj Restauracje\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generuj Restauracje\Sort.Inputs[Sort Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Generuj Restauracje\Sort.Inputs[Sort Input].Columns[nazwa]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="nazwa"
+                      lineageId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[nazwa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Generuj Restauracje\Sort.Inputs[Sort Input].Columns[miasto]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="miasto"
+                      lineageId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[miasto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Generuj Restauracje\Sort.Inputs[Sort Input].Columns[wojewodztwo]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="wojewodztwo"
+                      lineageId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[wojewodztwo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Generuj Restauracje\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[id]"
+                      name="id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[nazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[nazwa]"
+                      name="nazwa">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output].Columns[nazwa]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[miasto]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[miasto]"
+                      name="miasto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[miasto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[wojewodztwo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Generuj Restauracje\Sort.Outputs[Sort Output].Columns[wojewodztwo]"
+                      name="wojewodztwo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0].Columns[wojewodztwo]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Generuj Restauracje.Paths[OLE DB Source Output]"
+              endId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Inputs[Input 0]"
+              name="OLE DB Source Output"
+              startId="Package\Generuj Restauracje\Restauracje.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Generuj Restauracje.Paths[Output 0]"
+              endId="Package\Generuj Restauracje\Sort.Inputs[Sort Input]"
+              name="Output 0"
+              startId="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto.Outputs[Output 0]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3511,6 +4906,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Generuj Godziny dla restauracji" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D9CFA667-7666-4E4F-8393-37CA0E9D529E}"
+      DTS:From="Package\Generuj Godziny dla restauracji"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Generuj Restauracje" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{250066C5-5198-4579-819F-DCC0741F0131}"
+      DTS:From="Package\Generuj Restauracje"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Generuj Kelnerów" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3523,7 +4934,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="147,42"
           Id="Package\Generuj Dania"
@@ -3532,6 +4943,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Size="227,42"
           Id="Package\Generuj Godziny dla restauracji"
           TopLeft="326,162" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Generuj Restauracje"
+          TopLeft="450,286" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="220.5,128">
@@ -3558,6 +4973,78 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     Point3="219,21" />
                   <mssgle:LineSegment
                     End="219,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="439.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.5,82"
+              Start="0,0"
+              End="98.5,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="4,41" />
+                  <mssgle:LineSegment
+                    End="94.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.5,41"
+                    Point2="98.5,41"
+                    Point3="98.5,45" />
+                  <mssgle:LineSegment
+                    End="98.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Generuj Kelnerów"
+          TopLeft="607,386" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="538,328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151,58"
+              Start="0,0"
+              End="151,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="147,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="147,29"
+                    Point2="151,29"
+                    Point3="151,33" />
+                  <mssgle:LineSegment
+                    End="151,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3608,30 +5095,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           TopLeft="30,25" />
         <EdgeLayout
           Id="Package\Generuj Dania.Paths[Sort Output2]"
-          TopLeft="215,135">
+          TopLeft="160.5,361">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-32.6666666666667,34"
+              EndConnector="0,27"
               Start="0,0"
-              End="-32.6666666666667,26.5">
+              End="0,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.2119815668203" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.2119815668203"
-                    Point2="0,20.2119815668203"
-                    Point3="-4,20.2119815668203" />
-                  <mssgle:LineSegment
-                    End="-28.6666666666667,20.2119815668203" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28.6666666666667,20.2119815668203"
-                    Point2="-32.6666666666667,20.2119815668203"
-                    Point3="-32.6666666666667,24.2119815668203" />
-                  <mssgle:LineSegment
-                    End="-32.6666666666667,26.5" />
+                    End="0,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3680,18 +5155,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generuj Dania.Paths[Sort Output]"
-          TopLeft="160.5,361">
+          TopLeft="215,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27"
+              EndConnector="-32.6666666666667,34"
               Start="0,0"
-              End="0,19.5">
+              End="-32.6666666666667,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,16.2119815668203" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2119815668203"
+                    Point2="0,20.2119815668203"
+                    Point3="-4,20.2119815668203" />
+                  <mssgle:LineSegment
+                    End="-28.6666666666667,20.2119815668203" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.6666666666667,20.2119815668203"
+                    Point2="-32.6666666666667,20.2119815668203"
+                    Point3="-32.6666666666667,24.2119815668203" />
+                  <mssgle:LineSegment
+                    End="-32.6666666666667,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3704,30 +5191,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generuj Dania.Paths[OLE DB Source Output1]"
-          TopLeft="216.75,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Dania.Paths[OLE DB Source Output]"
           TopLeft="83.75,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3740,6 +5203,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[OLE DB Source Output]"
+          TopLeft="216.75,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3831,15 +5318,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\Generuj Godziny dla restauracji">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Generuj Godziny dla restauracji\pory dnia"
-          TopLeft="454,62" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Generuj Godziny dla restauracji\dodaj dummy"
-          TopLeft="232,195" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="132,42"
           Id="Package\Generuj Godziny dla restauracji\restauracje"
@@ -3853,9 +5332,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Id="Package\Generuj Godziny dla restauracji\Sort"
           TopLeft="299,269" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Generuj Godziny dla restauracji\+ stan restauracji"
-          TopLeft="147,394" />
+          Size="122,42"
+          Id="Package\Generuj Godziny dla restauracji\Union All"
+          TopLeft="255,468" />
         <NodeLayout
           Size="210,42"
           Id="Package\Generuj Godziny dla restauracji\restauracja TIMES porydnia"
@@ -3864,42 +5343,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Size="108,42"
           Id="Package\Generuj Godziny dla restauracji\Sort 1"
           TopLeft="722,243" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Generuj Godziny dla restauracji\pory dnia"
+          TopLeft="454,62" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Generuj Godziny dla restauracji\dodaj dummy"
+          TopLeft="232,195" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Generuj Godziny dla restauracji\+ stan restauracji"
+          TopLeft="147,394" />
         <EdgeLayout
           Id="Package\Generuj Godziny dla restauracji.Paths[Sort Output1]"
-          TopLeft="776,285">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-166.333333333333,80"
-              Start="0,0"
-              End="-166.333333333333,72.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.6370510396975" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.6370510396975"
-                    Point2="0,47.6370510396975"
-                    Point3="-4,47.6370510396975" />
-                  <mssgle:LineSegment
-                    End="-162.333333333333,47.6370510396975" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-162.333333333333,47.6370510396975"
-                    Point2="-166.333333333333,47.6370510396975"
-                    Point3="-166.333333333333,51.6370510396975" />
-                  <mssgle:LineSegment
-                    End="-166.333333333333,72.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Godziny dla restauracji.Paths[Sort Output]"
           TopLeft="348.5,311">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3929,7 +5386,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Godziny dla restauracji.Paths[Sort Output]"
+          TopLeft="776,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-166.333333333333,80"
+              Start="0,0"
+              End="-166.333333333333,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6370510396975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.6370510396975"
+                    Point2="0,47.6370510396975"
+                    Point3="-4,47.6370510396975" />
+                  <mssgle:LineSegment
+                    End="-162.333333333333,47.6370510396975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-162.333333333333,47.6370510396975"
+                    Point2="-166.333333333333,47.6370510396975"
+                    Point3="-166.333333333333,51.6370510396975" />
+                  <mssgle:LineSegment
+                    End="-166.333333333333,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3963,7 +5458,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3997,7 +5494,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4031,45 +5530,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generuj Godziny dla restauracji.Paths[Derived Column Output1]"
-          TopLeft="691,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85,58"
-              Start="0,0"
-              End="85,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="81,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="81,29"
-                    Point2="85,29"
-                    Point3="85,33" />
-                  <mssgle:LineSegment
-                    End="85,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Godziny dla restauracji.Paths[Derived Column Output]"
           TopLeft="304.5,237">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4099,46 +5566,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Generuj Godziny dla restauracji\Union All"
-          TopLeft="255,468" />
         <EdgeLayout
-          Id="Package\Generuj Godziny dla restauracji.Paths[Output 0]"
-          TopLeft="228.5,436">
+          Id="Package\Generuj Godziny dla restauracji.Paths[Derived Column Output]"
+          TopLeft="691,185">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.5,32"
+              EndConnector="85,58"
               Start="0,0"
-              End="87.5,24.5">
+              End="85,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12" />
+                    End="0,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
                   <mssgle:LineSegment
-                    End="83.5,16" />
+                    End="81,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="83.5,16"
-                    Point2="87.5,16"
-                    Point3="87.5,20" />
+                    Point1="81,29"
+                    Point2="85,29"
+                    Point3="85,33" />
                   <mssgle:LineSegment
-                    End="87.5,24.5" />
+                    End="85,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.75,21,16,16"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4158,5 +5623,118 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Generuj Restauracje">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Generuj Restauracje\Restauracje"
+          TopLeft="172,114" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto"
+          TopLeft="235,281" />
+        <EdgeLayout
+          Id="Package\Generuj Restauracje.Paths[OLE DB Source Output]"
+          TopLeft="239.5,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109,125"
+              Start="0,0"
+              End="109,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.5"
+                    Point2="0,62.5"
+                    Point3="4,62.5" />
+                  <mssgle:LineSegment
+                    End="105,62.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105,62.5"
+                    Point2="109,62.5"
+                    Point3="109,66.5" />
+                  <mssgle:LineSegment
+                    End="109,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Generuj Restauracje\Sort"
+          TopLeft="357,477" />
+        <EdgeLayout
+          Id="Package\Generuj Restauracje.Paths[Output 0]"
+          TopLeft="348.5,323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58,154"
+              Start="0,0"
+              End="58,146.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73"
+                    Point2="0,77"
+                    Point3="4,77" />
+                  <mssgle:LineSegment
+                    End="54,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54,77"
+                    Point2="58,77"
+                    Point3="58,81" />
+                  <mssgle:LineSegment
+                    End="58,146.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Restauracje\Restauracje">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Generuj Kelnerów">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Generuj Kelnerów\OLE DB Source"
+          TopLeft="273,111" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

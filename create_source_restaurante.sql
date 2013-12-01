@@ -14,9 +14,11 @@ CREATE TABLE Restauracje (
 CREATE TABLE Kelnerzy (
   id INT PRIMARY KEY,
   id_restauracji INT REFERENCES Restauracje,
+  id_przelozonego INT REFERENCES Kelnerzy,	
   nazwisko VARCHAR(64) NOT NULL,
   imie VARCHAR(32) NOT NULL,
-  data_zatrudnienia SMALLDATETIME NOT NULL  
+  wyksztalcenie INT NOT NULL,
+  data_zatrudnienia DATE NOT NULL
 );
 
 CREATE TABLE Zamowienia (
