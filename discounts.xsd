@@ -1,79 +1,126 @@
- <?xml version="1.0" encoding="UTF-8"?>
-   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-     <xs:element name="dostawcy">
-       <xs:complexType>
-	 <xs:sequence>
-	   <xs:element ref="uslugi"/>
-	   <xs:element ref="znizki"/>
-	 </xs:sequence>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="uslugi">
-       <xs:complexType>
-	 <xs:sequence>
-	   <xs:element maxOccurs="unbounded" ref="firma"/>
-	 </xs:sequence>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="znizki">
-       <xs:complexType>
-	 <xs:sequence>
-	   <xs:element maxOccurs="unbounded" ref="firma"/>
-	 </xs:sequence>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="firma">
-       <xs:complexType>
-	 <xs:choice>
-	   <xs:element maxOccurs="unbounded" ref="znizka"/>
-	   <xs:element maxOccurs="unbounded" ref="usluga"/>
-	 </xs:choice>
-	 <xs:attribute name="id"/>
-	 <xs:attribute name="nazwa" use="required" type="xs:NCName"/>
-	 <xs:attribute name="rejestracja" type="xs:date"/>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="znizka">
-       <xs:complexType>
-	 <xs:sequence>
-	   <xs:element ref="rabat"/>
-	   <xs:element ref="zasieg"/>
-	   <xs:element ref="oferowane"/>
-	   <xs:element ref="tokeny"/>
-	 </xs:sequence>
-	 <xs:attribute name="firma" use="required"/>
-	 <xs:attribute name="usluga" use="required" type="xs:NCName"/>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="rabat" type="xs:string"/>
-     <xs:element name="tokeny">
-       <xs:complexType>
-	 <xs:sequence>
-	   <xs:element maxOccurs="unbounded" ref="token"/>
-	 </xs:sequence>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="token">
-       <xs:complexType>
-	 <xs:attribute name="do" use="required" type="xs:date"/>
-	 <xs:attribute name="kod" use="required" type="xs:NCName"/>
-	 <xs:attribute name="od" use="required" type="xs:date"/>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="usluga">
-       <xs:complexType>
-	 <xs:sequence>
-	   <xs:element maxOccurs="unbounded" ref="oferowane"/>
-	 </xs:sequence>
-	 <xs:attribute name="id" use="required" type="xs:NCName"/>
-	 <xs:attribute name="nazwa" use="required"/>
-       </xs:complexType>
-     </xs:element>
-     <xs:element name="oferowane">
-       <xs:complexType>
-	 <xs:attribute name="do" use="required" type="xs:date"/>
-	 <xs:attribute name="od" use="required" type="xs:date"/>
-       </xs:complexType>
-     </xs:element>
-   </xs:schema>
-   
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="dostawcy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="uslugi"/>
+				<xs:element ref="znizki"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="uslugi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="firma"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="znizki">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="firma"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="firma">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element maxOccurs="unbounded" ref="znizka"/>
+				<xs:element maxOccurs="unbounded" ref="usluga"/>
+			</xs:choice>
+			<xs:attribute name="id" type="xs:int"/>
+			<xs:attribute name="nazwa" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="rejestracja" type="xs:date"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="znizka">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rabat"/>
+				<xs:element ref="zasieg"/>
+				<xs:element ref="oferowane"/>
+				<xs:element ref="tokeny"/>
+			</xs:sequence>
+			<xs:attribute name="firma" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="usluga" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rabat">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="zasieg">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="tokeny">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="token"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="token">
+		<xs:complexType>
+			<xs:attribute name="do" use="required" type="xs:date"/>
+			<xs:attribute name="kod" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="od" use="required" type="xs:date"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="usluga">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="oferowane"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nazwa" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="oferowane">
+		<xs:complexType>
+			<xs:attribute name="do" use="required" type="xs:date"/>
+			<xs:attribute name="od" use="required" type="xs:date"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
