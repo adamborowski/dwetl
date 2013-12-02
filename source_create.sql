@@ -29,7 +29,7 @@ CREATE TABLE Zamowienia (
   data_platnosci SMALLDATETIME NOT NULL,
   nr_stolika SMALLINT NOT NULL,
   kod_rabatu CHAR(13),
-  platnosc VARCHAR(16)
+  platnosc NVARCHAR(128)
 );
 
 CREATE TABLE Kategorie (
@@ -45,6 +45,7 @@ CREATE TABLE Dania (
   cena DECIMAL(7, 2) NOT NULL,
   porcja SMALLINT NOT NULL,
   jednostka CHAR(3) NOT NULL,
+  czy_wegetarianski SMALLINT NOT NULL,
   CONSTRAINT ck_dania_jednostka
 		CHECK (jednostka IN ('g', 'ml', 'szt'))
 );
