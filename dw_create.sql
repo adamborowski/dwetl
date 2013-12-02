@@ -8,8 +8,9 @@ GO
 -- tabele wymiarów
 CREATE TABLE Kelnerzy (
   id_kelnera INT IDENTITY(1,1) PRIMARY KEY,
-  nazwisko_imie NVARCHAR(64) NOT NULL,
-  wyksztalcenie NVARCHAR(50) NOT NULL, -- np. wykształcenie średnie niebranżowe
+  id_biz_kelnera INT NOT NULL,
+  nazwisko_imie NVARCHAR(97) NOT NULL,
+  wyksztalcenie VARCHAR(64) NOT NULL, -- np. wykształcenie średnie niebranżowe
   staz_pracy NVARCHAR(15) NOT NULL, -- np. krótki staż
   data_waznosci_od SMALLDATETIME NOT NULL,
   data_waznosci_do SMALLDATETIME,
@@ -36,7 +37,7 @@ CREATE TABLE Data (
 
 CREATE TABLE Dania (
   id_dania INTEGER IDENTITY(1,1) PRIMARY KEY,
-  nazwa NVARCHAR(40) NOT NULL,
+  nazwa VARCHAR(128) NOT NULL,
   czy_wegetarianskie NVARCHAR(20) NOT NULL, --np. niewegetariańskie
   kategoria NVARCHAR(20) NOT NULL -- np. przystawki zimne
 );
@@ -45,7 +46,7 @@ CREATE TABLE Restauracje (
   id_restauracji INTEGER IDENTITY(1,1) PRIMARY KEY,
   wojewodztwo NVARCHAR(20) NOT NULL,
   miasto NVARCHAR(30) NOT NULL,
-  nazwa NVARCHAR(40) NOT NULL
+  nazwa VARCHAR(32) NOT NULL
 );
 
 CREATE TABLE Platnosci (
