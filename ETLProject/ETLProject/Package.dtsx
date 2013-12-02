@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="181"
-  DTS:VersionGUID="{230F07C8-584A-4CAB-B22F-26E79326AB2A}">
+  DTS:VersionBuild="183"
+  DTS:VersionGUID="{9B8A25F5-D3B4-49C8-AD34-5BAAD919B790}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4937,13 +4937,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output].Columns[dl]} &lt;= 2 ? "praktykant" : (#{Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output].Columns[dl]} &lt;= 3 ? "krótki" : (#{Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output].Columns[dl]} &lt;= 5 ? "średni" : "długi"))</property>
+                          name="Expression">#{Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output].Columns[dl]} &lt;= 1 ? "praktykant" : (#{Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output].Columns[dl]} &lt;= 2 ? "krótki" : (#{Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output].Columns[dl]} &lt;= 3 ? "średni" : "długi"))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">dl &lt;= 2 ? "praktykant" : (dl &lt;= 3 ? "krótki" : (dl &lt;= 5 ? "średni" : "długi"))</property>
+                          name="FriendlyExpression">dl &lt;= 1 ? "praktykant" : (dl &lt;= 2 ? "krótki" : (dl &lt;= 3 ? "średni" : "długi"))</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -6209,12 +6209,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               name="Derived Column Output"
               startId="Package\Generuj Kelnerów\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Generuj Kelnerów.Paths[Derived Column Output1]"
+              refId="Package\Generuj Kelnerów.Paths[Derived Column Output]"
               endId="Package\Generuj Kelnerów\+ staż.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Generuj Kelnerów.Paths[Derived Column Output]"
+              refId="Package\Generuj Kelnerów.Paths[Derived Column Output1]"
               endId="Package\Generuj Kelnerów\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Derived Column Output"
               startId="Package\Generuj Kelnerów\+ staż.Outputs[Derived Column Output]" />
@@ -15093,17 +15093,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               name="Data Conversion Output"
               startId="Package\Generuj Zamówienie Dania\+ data_przyjecia_bez_godzin.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output4]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output3]"
               endId="Package\Generuj Zamówienie Dania\+nazwa_dania - join key.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Generuj Zamówienie Dania\uzyj xml do wysokosci rabatu.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output3]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output4]"
               endId="Package\Generuj Zamówienie Dania\uzyj xml do wysokosci rabatu.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Generuj Zamówienie Dania\zrób zajętość względną.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output1]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output2]"
               endId="Package\Generuj Zamówienie Dania\Sort 1.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Generuj Zamówienie Dania\+ cena_za_pozycje.Outputs[Derived Column Output]" />
@@ -15113,42 +15113,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               name="Derived Column Output"
               startId="Package\Generuj Zamówienie Dania\+ czas_realizacji + platnosc_not_empty.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output2]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Derived Column Output1]"
               endId="Package\Generuj Zamówienie Dania\+ data_przyjecia_bez_godzin.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Generuj Zamówienie Dania\+ godzina_przyjecia.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output9]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output6]"
               endId="Package\Generuj Zamówienie Dania\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+ hd_id_kelnera.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output7]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output5]"
               endId="Package\Generuj Zamówienie Dania\+ hd_id_restauracji.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+ nazwa_restauracji - join key.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output8]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output7]"
               endId="Package\Generuj Zamówienie Dania\+ hd_id_kelnera.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+ hd_id_restauracji.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output5]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output9]"
               endId="Package\Generuj Zamówienie Dania\+ hd_id_dania.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+nazwa_dania - join key.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output6]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output8]"
               endId="Package\Generuj Zamówienie Dania\+ nazwa_restauracji - join key.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+ hd_id_dania.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output1]"
               endId="Package\Generuj Zamówienie Dania\wylicz stan restauracji.Inputs[Input 0]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+ godziny otwarcia restauracji + liczba_miejsc.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output3]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output]"
               endId="Package\Generuj Zamówienie Dania\+ godzina_przyjecia.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\+ id restauracji.Outputs[Lookup Match Output]" />
@@ -15163,22 +15163,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Płatności.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output1]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output3]"
               endId="Package\Generuj Zamówienie Dania\+ godziny otwarcia restauracji + liczba_miejsc.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Data.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Merge Join Output]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Merge Join Output2]"
               endId="Package\Generuj Zamówienie Dania\Multicast.Inputs[Multicast Input 1]"
               name="Merge Join Output"
               startId="Package\Generuj Zamówienie Dania\pozycja połączona z zamówieniem.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Merge Join Output2]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Merge Join Output1]"
               endId="Package\Generuj Zamówienie Dania\zrób zajętość względną.Inputs[Derived Column Input]"
               name="Merge Join Output"
               startId="Package\Generuj Zamówienie Dania\połączenie z zajętością bezwzględną.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Merge Join Output1]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Merge Join Output]"
               endId="Package\Generuj Zamówienie Dania\+ czas_realizacji + platnosc_not_empty.Inputs[Derived Column Input]"
               name="Merge Join Output"
               startId="Package\Generuj Zamówienie Dania\do pozycji dołącz sumę za całe zamówienie.Outputs[Merge Join Output]" />
@@ -15203,12 +15203,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               name="Multicast Output 3"
               startId="Package\Generuj Zamówienie Dania\Multicast 1.Outputs[Multicast Output 3]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output]"
+              refId="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output1]"
               endId="Package\Generuj Zamówienie Dania\+ cena_za_pozycje.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Generuj Zamówienie Dania\Pozycje Zamówień.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output1]"
+              refId="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output]"
               endId="Package\Generuj Zamówienie Dania\+ id restauracji.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Generuj Zamówienie Dania\Zamówienia.Outputs[OLE DB Source Output]" />
@@ -15218,7 +15218,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               name="Output 0"
               startId="Package\Generuj Zamówienie Dania\wylicz stan restauracji.Outputs[Output 0]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Sort Output]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Sort Output3]"
               endId="Package\Generuj Zamówienie Dania\pozycja połączona z zamówieniem.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Generuj Zamówienie Dania\Sort 1.Outputs[Sort Output]" />
@@ -15228,12 +15228,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               name="Sort Output"
               startId="Package\Generuj Zamówienie Dania\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Sort Output3]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Sort Output5]"
               endId="Package\Generuj Zamówienie Dania\połączenie z zajętością bezwzględną.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Generuj Zamówienie Dania\Sort 3.Outputs[Sort Output]" />
             <path
-              refId="Package\Generuj Zamówienie Dania.Paths[Sort Output5]"
+              refId="Package\Generuj Zamówienie Dania.Paths[Sort Output]"
               endId="Package\Generuj Zamówienie Dania\połączenie z zajętością bezwzględną.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Generuj Zamówienie Dania\Sort 2.Outputs[Sort Output]" />
@@ -15318,6 +15318,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Size="178,42"
           Id="Package\czyszczenie hurtowni"
           TopLeft="44,2" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\dołącz id_przelozonego"
+          TopLeft="338,149" />
         <NodeLayout
           Size="147,42"
           Id="Package\Generuj Dania"
@@ -15417,32 +15421,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="135.25,44">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\dołącz id_przelozonego"
-          TopLeft="338,149" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="219,172">
           <EdgeLayout.Curve>
@@ -15456,6 +15434,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="111.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="135.25,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15490,206 +15490,378 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Generuj Dania">
+    design-time-name="Package\dołącz id_przelozonego">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="207,42"
-          Id="Package\Generuj Dania\posortowane gotowe dania"
-          TopLeft="57,319" />
+          Size="193,42"
+          Id="Package\dołącz id_przelozonego\sortuj po id_biz_kelnera"
+          TopLeft="312,430" />
         <NodeLayout
-          Size="238,42"
-          Id="Package\Generuj Dania\wegetariańskie niewegetariańskie"
-          TopLeft="37,249" />
+          Size="214,42"
+          Id="Package\dołącz id_przelozonego\kelner z hd_id_przelozonego"
+          TopLeft="225,530" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\Generuj Dania\Zapis Dania do hurtowni"
-          TopLeft="519,368" />
+          Size="244,42"
+          Id="Package\dołącz id_przelozonego\sortuj po id_biz_przelozonego"
+          TopLeft="61,430" />
         <NodeLayout
-          Size="112,42"
-          Id="Package\Generuj Dania\Sort 1"
-          TopLeft="159,93" />
+          Size="121,42"
+          Id="Package\dołącz id_przelozonego\Multicast"
+          TopLeft="230,336" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\Generuj Dania\Data Conversion"
-          TopLeft="337,394" />
+          Size="145,42"
+          Id="Package\dołącz id_przelozonego\Tylko aktualni"
+          TopLeft="210,161" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Generuj Dania\Union All"
-          TopLeft="97,386" />
+          Size="267,42"
+          Id="Package\dołącz id_przelozonego\+ id_biz_przelozonego"
+          TopLeft="155,245" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Generuj Dania\dania z kategoriami"
-          TopLeft="69,169" />
+          Size="192,42"
+          Id="Package\dołącz id_przelozonego\update id_przelozonego"
+          TopLeft="247,621" />
         <NodeLayout
-          Size="125,42"
-          Id="Package\Generuj Dania\Kategorie"
-          TopLeft="156,25" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Generuj Dania\Dania"
-          TopLeft="30,25" />
-        <NodeLayout
-          Size="104,42"
-          Id="Package\Generuj Dania\Sort"
-          TopLeft="32,94" />
+          Size="163,42"
+          Id="Package\dołącz id_przelozonego\Wszyscy Kelnerzy"
+          TopLeft="202,85" />
         <EdgeLayout
-          Id="Package\Generuj Dania.Paths[Sort Output]"
-          TopLeft="84,136">
+          Id="Package\dołącz id_przelozonego.Paths[Multicast Output 1]"
+          TopLeft="271.666666666667,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.6666666666667,33"
+              EndConnector="-88.6666666666667,52"
               Start="0,0"
-              End="43.6666666666667,25.5">
+              End="-88.6666666666667,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.6175115207373" />
+                    End="0,17.2071778140294" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.6175115207373"
-                    Point2="0,19.6175115207373"
-                    Point3="4,19.6175115207373" />
+                    Point1="0,17.2071778140294"
+                    Point2="0,21.2071778140294"
+                    Point3="-4,21.2071778140294" />
                   <mssgle:LineSegment
-                    End="39.6666666666667,19.6175115207373" />
+                    End="-84.6666666666667,21.2071778140294" />
                   <mssgle:CubicBezierSegment
-                    Point1="39.6666666666667,19.6175115207373"
-                    Point2="43.6666666666667,19.6175115207373"
-                    Point3="43.6666666666667,23.6175115207373" />
+                    Point1="-84.6666666666667,21.2071778140294"
+                    Point2="-88.6666666666667,21.2071778140294"
+                    Point3="-88.6666666666667,25.2071778140294" />
                   <mssgle:LineSegment
-                    End="43.6666666666667,25.5" />
+                    End="-88.6666666666667,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Dania.Paths[OLE DB Source Output1]"
-          TopLeft="83.75,67">
+          Id="Package\dołącz id_przelozonego.Paths[Merge Join Output]"
+          TopLeft="332,572">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27"
+              EndConnector="11,49"
               Start="0,0"
-              End="0,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Dania.Paths[OLE DB Source Output]"
-          TopLeft="216.75,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Dania.Paths[Merge Join Output]"
-          TopLeft="155.5,211">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Dania.Paths[Derived Column Output]"
-          TopLeft="158.25,291">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
+              End="11,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="4,24.5" />
+                  <mssgle:LineSegment
+                    End="7,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,24.5"
+                    Point2="11,24.5"
+                    Point3="11,28.5" />
+                  <mssgle:LineSegment
+                    End="11,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Dania.Paths[Data Conversion Output]"
-          TopLeft="494,415">
+          Id="Package\dołącz id_przelozonego.Paths[Lookup Match Output]"
+          TopLeft="289.5,287">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="25,-26"
+              EndConnector="0,49"
               Start="0,0"
-              End="17.5,-26">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="8.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.5,0"
-                    Point2="12.5,0"
-                    Point3="12.5,-4" />
-                  <mssgle:LineSegment
-                    End="12.5,-22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.5,-22"
-                    Point2="12.5,-26"
-                    Point3="16.5,-26" />
-                  <mssgle:LineSegment
-                    End="17.5,-26" />
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-47.19138671875,15.9453125,94.3827734375,9.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dołącz id_przelozonego.Paths[tylko nowe]"
+          TopLeft="285.5,203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.73873046875,12.4453125,47.4774609375,9.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dołącz id_przelozonego.Paths[Sort Output]"
+          TopLeft="183,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="149,58"
+              Start="0,0"
+              End="149,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="145,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="145,29"
+                    Point2="149,29"
+                    Point3="149,33" />
+                  <mssgle:LineSegment
+                    End="149,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dołącz id_przelozonego.Paths[Sort Output1]"
+          TopLeft="408.5,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42.1666666666667,58"
+              Start="0,0"
+              End="-42.1666666666667,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5417439703154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5417439703154"
+                    Point2="0,34.5417439703154"
+                    Point3="-4,34.5417439703154" />
+                  <mssgle:LineSegment
+                    End="-38.1666666666667,34.5417439703154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38.1666666666667,34.5417439703154"
+                    Point2="-42.1666666666667,34.5417439703154"
+                    Point3="-42.1666666666667,38.5417439703154" />
+                  <mssgle:LineSegment
+                    End="-42.1666666666667,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dołącz id_przelozonego.Paths[OLE DB Source Output]"
+          TopLeft="283,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\dołącz id_przelozonego.Paths[Multicast Output 2]"
+          TopLeft="309.333333333333,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.1666666666667,52"
+              Start="0,0"
+              End="99.1666666666667,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2071778140294" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2071778140294"
+                    Point2="0,21.2071778140294"
+                    Point3="4,21.2071778140294" />
+                  <mssgle:LineSegment
+                    End="95.1666666666667,21.2071778140294" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.1666666666667,21.2071778140294"
+                    Point2="99.1666666666667,21.2071778140294"
+                    Point3="99.1666666666667,25.2071778140294" />
+                  <mssgle:LineSegment
+                    End="99.1666666666667,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\dołącz id_przelozonego\+ id_biz_przelozonego">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Kelnerzy]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\dołącz id_przelozonego\Wszyscy Kelnerzy">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Generuj Dania">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Generuj Dania\Kategorie"
+          TopLeft="156,25" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\Generuj Dania\wegetariańskie niewegetariańskie"
+          TopLeft="37,249" />
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Generuj Dania\Sort 1"
+          TopLeft="159,93" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Generuj Dania\Union All"
+          TopLeft="97,386" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Generuj Dania\posortowane gotowe dania"
+          TopLeft="57,319" />
+        <NodeLayout
+          Size="104,42"
+          Id="Package\Generuj Dania\Sort"
+          TopLeft="32,94" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Generuj Dania\Data Conversion"
+          TopLeft="337,394" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Generuj Dania\dania z kategoriami"
+          TopLeft="69,169" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Generuj Dania\Dania"
+          TopLeft="30,25" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Generuj Dania\Zapis Dania do hurtowni"
+          TopLeft="519,368" />
         <EdgeLayout
           Id="Package\Generuj Dania.Paths[Union All Output 1]"
           TopLeft="219,407">
@@ -15721,7 +15893,69 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[Sort Output]"
+          TopLeft="84,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43.6666666666667,33"
+              Start="0,0"
+              End="43.6666666666667,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6175115207373" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.6175115207373"
+                    Point2="0,19.6175115207373"
+                    Point3="4,19.6175115207373" />
+                  <mssgle:LineSegment
+                    End="39.6666666666667,19.6175115207373" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.6666666666667,19.6175115207373"
+                    Point2="43.6666666666667,19.6175115207373"
+                    Point3="43.6666666666667,23.6175115207373" />
+                  <mssgle:LineSegment
+                    End="43.6666666666667,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[Sort Output1]"
+          TopLeft="159.25,361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15755,47 +15989,146 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Dania.Paths[Sort Output1]"
-          TopLeft="159.25,361">
+          Id="Package\Generuj Dania.Paths[OLE DB Source Output]"
+          TopLeft="216.75,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25"
+              EndConnector="0,26"
               Start="0,0"
-              End="0,17.5">
+              End="0,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[OLE DB Source Output1]"
+          TopLeft="83.75,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[Merge Join Output]"
+          TopLeft="155.5,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[Derived Column Output]"
+          TopLeft="158.25,291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Dania.Paths[Data Conversion Output]"
+          TopLeft="494,415">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25,-26"
+              Start="0,0"
+              End="17.5,-26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="8.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,0"
+                    Point2="12.5,0"
+                    Point3="12.5,-4" />
+                  <mssgle:LineSegment
+                    End="12.5,-22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.5,-22"
+                    Point2="12.5,-26"
+                    Point3="16.5,-26" />
+                  <mssgle:LineSegment
+                    End="17.5,-26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Dania\Zapis Dania do hurtowni">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Generuj Dania\Kategorie">
     <Properties>
@@ -15811,6 +16144,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Generuj Dania\Dania">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Dania\Zapis Dania do hurtowni">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15864,42 +16210,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Generuj Godziny dla restauracji - niepotrzebne\+ stan restauracji"
           TopLeft="147,394" />
         <EdgeLayout
-          Id="Package\Generuj Godziny dla restauracji - niepotrzebne.Paths[Sort Output1]"
-          TopLeft="348.5,311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="193.833333333333,54"
-              Start="0,0"
-              End="193.833333333333,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1550094517958" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1550094517958"
-                    Point2="0,32.1550094517958"
-                    Point3="4,32.1550094517958" />
-                  <mssgle:LineSegment
-                    End="189.833333333333,32.1550094517958" />
-                  <mssgle:CubicBezierSegment
-                    Point1="189.833333333333,32.1550094517958"
-                    Point2="193.833333333333,32.1550094517958"
-                    Point3="193.833333333333,36.1550094517958" />
-                  <mssgle:LineSegment
-                    End="193.833333333333,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Generuj Godziny dla restauracji - niepotrzebne.Paths[Sort Output]"
           TopLeft="776,285">
           <EdgeLayout.Curve>
@@ -15925,6 +16235,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     Point3="-166.333333333333,51.6370510396975" />
                   <mssgle:LineSegment
                     End="-166.333333333333,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Godziny dla restauracji - niepotrzebne.Paths[Sort Output1]"
+          TopLeft="348.5,311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="193.833333333333,54"
+              Start="0,0"
+              End="193.833333333333,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1550094517958" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1550094517958"
+                    Point2="0,32.1550094517958"
+                    Point3="4,32.1550094517958" />
+                  <mssgle:LineSegment
+                    End="189.833333333333,32.1550094517958" />
+                  <mssgle:CubicBezierSegment
+                    Point1="189.833333333333,32.1550094517958"
+                    Point2="193.833333333333,32.1550094517958"
+                    Point3="193.833333333333,36.1550094517958" />
+                  <mssgle:LineSegment
+                    End="193.833333333333,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16044,42 +16390,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Godziny dla restauracji - niepotrzebne.Paths[Derived Column Output1]"
-          TopLeft="304.5,237">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="44,32"
-              Start="0,0"
-              End="44,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
-                  <mssgle:LineSegment
-                    End="40,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="40,16"
-                    Point2="44,16"
-                    Point3="44,20" />
-                  <mssgle:LineSegment
-                    End="44,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Generuj Godziny dla restauracji - niepotrzebne.Paths[Derived Column Output]"
           TopLeft="691,185">
           <EdgeLayout.Curve>
@@ -16115,6 +16425,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Godziny dla restauracji - niepotrzebne.Paths[Derived Column Output1]"
+          TopLeft="304.5,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44,32"
+              Start="0,0"
+              End="44,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="40,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40,16"
+                    Point2="44,16"
+                    Point3="44,20" />
+                  <mssgle:LineSegment
+                    End="44,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -16137,21 +16483,63 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="164,42"
+          Id="Package\Generuj Kelnerów\Insert Destination"
+          TopLeft="152,821.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Generuj Kelnerów\Derived Column"
+          TopLeft="17.5000000000001,413.5" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Generuj Kelnerów\OLE DB Command"
+          TopLeft="5.50000000000006,515.5" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Generuj Kelnerów\Slowly Changing Dimension"
+          TopLeft="129,311.5" />
+        <NodeLayout
           Size="120,42"
           Id="Package\Generuj Kelnerów\Kelnerzy"
           TopLeft="174,5.5" />
-        <NodeLayout
-          Size="110,42"
-          Id="Package\Generuj Kelnerów\+ staż"
-          TopLeft="179,209.5" />
         <NodeLayout
           Size="246,42"
           Id="Package\Generuj Kelnerów\+ nazwisko_imie, + ilosc_lat_pracy"
           TopLeft="111,107.5" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Generuj Kelnerów\Slowly Changing Dimension"
-          TopLeft="129,311.5" />
+          Size="122,42"
+          Id="Package\Generuj Kelnerów\Union All"
+          TopLeft="173,617.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Generuj Kelnerów\Derived Column 1"
+          TopLeft="152,719.5" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Generuj Kelnerów\+ staż"
+          TopLeft="179,209.5" />
+        <EdgeLayout
+          Id="Package\Generuj Kelnerów.Paths[Union All Output 1]"
+          TopLeft="234,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Generuj Kelnerów.Paths[OLE DB Source Output]"
           TopLeft="234,47.5">
@@ -16175,107 +16563,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[Derived Column Output1]"
-          TopLeft="234,149.5">
+          Id="Package\Generuj Kelnerów.Paths[OLE DB Command Output]"
+          TopLeft="89.0000000000001,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="126,60"
               Start="0,0"
-              End="0,52.5">
+              End="126,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[Derived Column Output]"
-          TopLeft="234,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Generuj Kelnerów\Derived Column"
-          TopLeft="17.5000000000001,413.5" />
-        <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[Historical Attribute Inserts Output]"
-          TopLeft="200.333333333333,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-105.333333333333,60"
-              Start="0,0"
-              End="-105.333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2722117202268" />
+                    End="0,31.5339805825243" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2722117202268"
-                    Point2="0,24.2722117202268"
-                    Point3="-4,24.2722117202268" />
+                    Point1="0,31.5339805825243"
+                    Point2="0,35.5339805825243"
+                    Point3="4,35.5339805825243" />
                   <mssgle:LineSegment
-                    End="-101.333333333333,24.2722117202268" />
+                    End="122,35.5339805825243" />
                   <mssgle:CubicBezierSegment
-                    Point1="-101.333333333333,24.2722117202268"
-                    Point2="-105.333333333333,24.2722117202268"
-                    Point3="-105.333333333333,28.2722117202268" />
+                    Point1="122,35.5339805825243"
+                    Point2="126,35.5339805825243"
+                    Point3="126,39.5339805825243" />
                   <mssgle:LineSegment
-                    End="-105.333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-126.723053385417,29.2722117202268,148.1127734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Generuj Kelnerów\OLE DB Command"
-          TopLeft="5.50000000000006,515.5" />
-        <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[Derived Column Output2]"
-          TopLeft="92.0000000000001,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="126,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16284,10 +16596,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Generuj Kelnerów\Union All"
-          TopLeft="173,617.5" />
         <EdgeLayout
           Id="Package\Generuj Kelnerów.Paths[New Output]"
           TopLeft="267.666666666667,353.5">
@@ -16325,46 +16633,68 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[OLE DB Command Output]"
-          TopLeft="89.0000000000001,557.5">
+          Id="Package\Generuj Kelnerów.Paths[Historical Attribute Inserts Output]"
+          TopLeft="200.333333333333,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126,60"
+              EndConnector="-105.333333333333,60"
               Start="0,0"
-              End="126,52.5">
+              End="-105.333333333333,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5339805825243" />
+                    End="0,20.2722117202268" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5339805825243"
-                    Point2="0,35.5339805825243"
-                    Point3="4,35.5339805825243" />
+                    Point1="0,20.2722117202268"
+                    Point2="0,24.2722117202268"
+                    Point3="-4,24.2722117202268" />
                   <mssgle:LineSegment
-                    End="122,35.5339805825243" />
+                    End="-101.333333333333,24.2722117202268" />
                   <mssgle:CubicBezierSegment
-                    Point1="122,35.5339805825243"
-                    Point2="126,35.5339805825243"
-                    Point3="126,39.5339805825243" />
+                    Point1="-101.333333333333,24.2722117202268"
+                    Point2="-105.333333333333,24.2722117202268"
+                    Point3="-105.333333333333,28.2722117202268" />
                   <mssgle:LineSegment
-                    End="126,52.5" />
+                    End="-105.333333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-126.723053385417,29.2722117202268,148.1127734375,9.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Generuj Kelnerów\Derived Column 1"
-          TopLeft="152,719.5" />
         <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[Union All Output 1]"
-          TopLeft="234,659.5">
+          Id="Package\Generuj Kelnerów.Paths[Derived Column Output3]"
+          TopLeft="234,761.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Kelnerów.Paths[Derived Column Output2]"
+          TopLeft="92.0000000000001,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16384,13 +16714,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Generuj Kelnerów\Insert Destination"
-          TopLeft="152,821.5" />
         <EdgeLayout
-          Id="Package\Generuj Kelnerów.Paths[Derived Column Output3]"
-          TopLeft="234,761.5">
+          Id="Package\Generuj Kelnerów.Paths[Derived Column Output1]"
+          TopLeft="234,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Kelnerów.Paths[Derived Column Output]"
+          TopLeft="234,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16413,19 +16761,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Kelnerów\Kelnerzy">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Generuj Kelnerów\Slowly Changing Dimension">
     <Properties>
@@ -16484,27 +16819,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Kelnerów\Kelnerzy">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Generuj Restauracje">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="135,42"
-          Id="Package\Generuj Restauracje\Restauracje"
-          TopLeft="172,114" />
+          Size="172,42"
+          Id="Package\Generuj Restauracje\OLE DB Destination"
+          TopLeft="569,270" />
         <NodeLayout
           Size="99,42"
           Id="Package\Generuj Restauracje\Sort"
           TopLeft="201,269" />
         <NodeLayout
+          Size="135,42"
+          Id="Package\Generuj Restauracje\Restauracje"
+          TopLeft="172,114" />
+        <NodeLayout
           Size="227,42"
           Id="Package\Generuj Restauracje\Adres -&gt; Województwo, Miasto"
           TopLeft="331,195" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Generuj Restauracje\OLE DB Destination"
-          TopLeft="569,270" />
         <NodeLayout
           Size="157,42"
           Id="Package\Generuj Restauracje\Data Conversion"
@@ -16540,7 +16888,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16574,7 +16924,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16608,7 +16960,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16642,14 +16996,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Generuj Restauracje\OLE DB Destination">
+    design-time-name="Package\Generuj Restauracje\Restauracje">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16662,7 +17018,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Generuj Restauracje\Restauracje">
+    design-time-name="Package\Generuj Restauracje\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16680,199 +17036,137 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="188,42"
-          Id="Package\Generuj Zamówienie Dania\przygotuj sumy pozycji"
-          TopLeft="536,419" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Generuj Zamówienie Dania\Multicast 1"
-          TopLeft="787,107" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Generuj Zamówienie Dania\Multicast"
-          TopLeft="465,265" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Generuj Zamówienie Dania\Pozycje Zamówień"
-          TopLeft="141,11" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Generuj Zamówienie Dania\Sort 3"
-          TopLeft="885,765" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Generuj Zamówienie Dania\+ id restauracji"
-          TopLeft="622,10" />
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Data"
-          TopLeft="225,580" />
-        <NodeLayout
-          Size="207,42"
-          Id="Package\Generuj Zamówienie Dania\Zamówienia"
-          TopLeft="372,12" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Generuj Zamówienie Dania\Sort 1"
-          TopLeft="160,190" />
-        <NodeLayout
-          Size="272,42"
-          Id="Package\Generuj Zamówienie Dania\ile zamówień w danej godzinie - zajętosć"
-          TopLeft="801,199" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Generuj Zamówienie Dania\wylicz stan restauracji"
-          TopLeft="32,685" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Generuj Zamówienie Dania\SUMA zamówienia"
-          TopLeft="541,351" />
-        <NodeLayout
-          Size="299,42"
-          Id="Package\Generuj Zamówienie Dania\+ godziny otwarcia restauracji + liczba_miejsc"
-          TopLeft="580,582" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Generuj Zamówienie Dania\powiąż z tablica wymiarów Czas"
-          TopLeft="253,685" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Generuj Zamówienie Dania\+ godzina_przyjecia"
-          TopLeft="902,11" />
+          Size="223,42"
+          Id="Package\Generuj Zamówienie Dania\+ nazwa_restauracji - join key"
+          TopLeft="49,1046" />
         <NodeLayout
           Size="241,42"
           Id="Package\Generuj Zamówienie Dania\pozycja połączona z zamówieniem"
           TopLeft="416,196" />
         <NodeLayout
-          Size="218,42"
-          Id="Package\Generuj Zamówienie Dania\+ data_przyjecia_bez_godzin"
-          TopLeft="367,102" />
+          Size="108,42"
+          Id="Package\Generuj Zamówienie Dania\Sort 3"
+          TopLeft="885,765" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Generuj Zamówienie Dania\+ hd_id_dania"
+          TopLeft="369,957" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Generuj Zamówienie Dania\zrób zajętość względną"
+          TopLeft="479,833" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Generuj Zamówienie Dania\Multicast 1"
+          TopLeft="787,107" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Generuj Zamówienie Dania\Zamówienia"
+          TopLeft="372,12" />
         <NodeLayout
           Size="163,42"
           Id="Package\Generuj Zamówienie Dania\przygotuj pozycje"
           TopLeft="324,355" />
         <NodeLayout
-          Size="267,42"
-          Id="Package\Generuj Zamówienie Dania\+ czas_realizacji + platnosc_not_empty"
-          TopLeft="22,496" />
+          Size="152,42"
+          Id="Package\Generuj Zamówienie Dania\+ id restauracji"
+          TopLeft="622,10" />
         <NodeLayout
           Size="99,42"
           Id="Package\Generuj Zamówienie Dania\Sort"
           TopLeft="650,105" />
         <NodeLayout
           Size="251,42"
-          Id="Package\Generuj Zamówienie Dania\połączenie z zajętością bezwzględną"
-          TopLeft="748,843" />
-        <NodeLayout
-          Size="283,42"
-          Id="Package\Generuj Zamówienie Dania\do pozycji dołącz sumę za całe zamówienie"
-          TopLeft="401,497" />
-        <NodeLayout
-          Size="251,42"
           Id="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Płatności"
           TopLeft="585,684" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Generuj Zamówienie Dania\Multicast"
+          TopLeft="465,265" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Generuj Zamówienie Dania\OLE DB Destination"
+          TopLeft="181,1287" />
         <NodeLayout
           Size="108,42"
           Id="Package\Generuj Zamówienie Dania\Sort 2"
           TopLeft="663,766" />
         <NodeLayout
+          Size="183,42"
+          Id="Package\Generuj Zamówienie Dania\wylicz stan restauracji"
+          TopLeft="32,685" />
+        <NodeLayout
+          Size="283,42"
+          Id="Package\Generuj Zamówienie Dania\do pozycji dołącz sumę za całe zamówienie"
+          TopLeft="401,497" />
+        <NodeLayout
+          Size="299,42"
+          Id="Package\Generuj Zamówienie Dania\+ godziny otwarcia restauracji + liczba_miejsc"
+          TopLeft="580,582" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Generuj Zamówienie Dania\przygotuj sumy pozycji"
+          TopLeft="536,419" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Generuj Zamówienie Dania\Pozycje Zamówień"
+          TopLeft="141,11" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Generuj Zamówienie Dania\+ hd_id_restauracji"
+          TopLeft="374,1045" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Generuj Zamówienie Dania\uzyj xml do wysokosci rabatu"
+          TopLeft="184,824" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Generuj Zamówienie Dania\+ godzina_przyjecia"
+          TopLeft="902,11" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Data"
+          TopLeft="225,580" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Generuj Zamówienie Dania\+ data_przyjecia_bez_godzin"
+          TopLeft="367,102" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Generuj Zamówienie Dania\+nazwa_dania - join key"
+          TopLeft="53,958" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Generuj Zamówienie Dania\Sort 1"
+          TopLeft="160,190" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Generuj Zamówienie Dania\SUMA zamówienia"
+          TopLeft="541,351" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Generuj Zamówienie Dania\+ hd_id_kelnera"
+          TopLeft="93,1150" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\Generuj Zamówienie Dania\+ czas_realizacji + platnosc_not_empty"
+          TopLeft="22,496" />
+        <NodeLayout
+          Size="272,42"
+          Id="Package\Generuj Zamówienie Dania\ile zamówień w danej godzinie - zajętosć"
+          TopLeft="801,199" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Generuj Zamówienie Dania\powiąż z tablica wymiarów Czas"
+          TopLeft="253,685" />
+        <NodeLayout
           Size="170,42"
           Id="Package\Generuj Zamówienie Dania\+ cena_za_pozycje"
           TopLeft="134,88" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Generuj Zamówienie Dania\OLE DB Destination"
-          TopLeft="181,1287" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Sort Output5]"
-          TopLeft="717,808">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116,35"
-              Start="0,0"
-              End="116,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.8669833729216" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.8669833729216"
-                    Point2="0,20.8669833729216"
-                    Point3="4,20.8669833729216" />
-                  <mssgle:LineSegment
-                    End="112,20.8669833729216" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112,20.8669833729216"
-                    Point2="116,20.8669833729216"
-                    Point3="116,24.8669833729216" />
-                  <mssgle:LineSegment
-                    End="116,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Sort Output4]"
-          TopLeft="749,127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38,0"
-              Start="0,0"
-              End="30.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="30.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Sort Output3]"
-          TopLeft="939,807">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-25,36"
-              Start="0,0"
-              End="-25,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.4631828978622" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.4631828978622"
-                    Point2="0,21.4631828978622"
-                    Point3="-4,21.4631828978622" />
-                  <mssgle:LineSegment
-                    End="-21,21.4631828978622" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21,21.4631828978622"
-                    Point2="-25,21.4631828978622"
-                    Point3="-25,25.4631828978622" />
-                  <mssgle:LineSegment
-                    End="-25,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="251,42"
+          Id="Package\Generuj Zamówienie Dania\połączenie z zajętością bezwzględną"
+          TopLeft="748,843" />
         <EdgeLayout
           Id="Package\Generuj Zamówienie Dania.Paths[Sort Output2]"
           TopLeft="405.5,397">
@@ -16943,6 +17237,96 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generuj Zamówienie Dania.Paths[Sort Output]"
+          TopLeft="717,808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116,35"
+              Start="0,0"
+              End="116,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8669833729216" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.8669833729216"
+                    Point2="0,20.8669833729216"
+                    Point3="4,20.8669833729216" />
+                  <mssgle:LineSegment
+                    End="112,20.8669833729216" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112,20.8669833729216"
+                    Point2="116,20.8669833729216"
+                    Point3="116,24.8669833729216" />
+                  <mssgle:LineSegment
+                    End="116,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Sort Output5]"
+          TopLeft="939,807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25,36"
+              Start="0,0"
+              End="-25,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4631828978622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4631828978622"
+                    Point2="0,21.4631828978622"
+                    Point3="-4,21.4631828978622" />
+                  <mssgle:LineSegment
+                    End="-21,21.4631828978622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21,21.4631828978622"
+                    Point2="-25,21.4631828978622"
+                    Point3="-25,25.4631828978622" />
+                  <mssgle:LineSegment
+                    End="-25,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Sort Output4]"
+          TopLeft="749,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38,0"
+              Start="0,0"
+              End="30.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Sort Output3]"
           TopLeft="268,214">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16986,7 +17370,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output1]"
+          Id="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output]"
           TopLeft="579,32">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17008,7 +17392,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output]"
+          Id="Package\Generuj Zamówienie Dania.Paths[OLE DB Source Output1]"
           TopLeft="221.75,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17098,28 +17482,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Multicast Output 11]"
-          TopLeft="935.333333333333,149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Generuj Zamówienie Dania.Paths[Multicast Output 1]"
           TopLeft="514.666666666667,307">
           <EdgeLayout.Curve>
@@ -17154,7 +17516,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Merge Join Output1]"
+          Id="Package\Generuj Zamówienie Dania.Paths[Multicast Output 11]"
+          TopLeft="935.333333333333,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Merge Join Output]"
           TopLeft="401,517.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17176,7 +17560,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Merge Join Output]"
+          Id="Package\Generuj Zamówienie Dania.Paths[Merge Join Output1]"
+          TopLeft="748,864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-80,-10"
+              Start="0,0"
+              End="-72.5,-10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-36,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36,0"
+                    Point2="-40,0"
+                    Point3="-40,-4" />
+                  <mssgle:LineSegment
+                    End="-40,-6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-40,-6"
+                    Point2="-40,-10"
+                    Point3="-44,-10" />
+                  <mssgle:LineSegment
+                    End="-72.5,-10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Merge Join Output2]"
           TopLeft="537,238">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17195,6 +17613,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output3]"
+          TopLeft="456,602">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,0"
+              Start="0,0"
+              End="116.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.05861328125,5,94.3827734375,9.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17218,30 +17660,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-47.19138671875,11.4453125,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output3]"
-          TopLeft="774,31.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="128,0"
-              Start="0,0"
-              End="120.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="120.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="13.05861328125,5,94.3827734375,9.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17270,31 +17688,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output1]"
-          TopLeft="456,602">
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output]"
+          TopLeft="774,31.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="124,0"
+              EndConnector="128,0"
               Start="0,0"
-              End="116.5,0">
+              End="120.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="116.5,0" />
+                    End="120.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.05861328125,5,94.3827734375,9.609375"
+              BoundingBox="13.05861328125,5,94.3827734375,9.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output]"
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output1]"
           TopLeft="729.5,624">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17330,7 +17748,163 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output2]"
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output8]"
+          TopLeft="485.5,999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-325,47"
+              Start="0,0"
+              End="-325,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-321,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-321,23.5"
+                    Point2="-325,23.5"
+                    Point3="-325,27.5" />
+                  <mssgle:LineSegment
+                    End="-325,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-209.69138671875,28.5,94.3827734375,9.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output9]"
+          TopLeft="249,978.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,0"
+              Start="0,0"
+              End="112.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="9.05861328125,5,94.3827734375,9.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output7]"
+          TopLeft="460,1087">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-288.5,63"
+              Start="0,0"
+              End="-288.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
+                  <mssgle:LineSegment
+                    End="-284.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-284.5,31.5"
+                    Point2="-288.5,31.5"
+                    Point3="-288.5,35.5" />
+                  <mssgle:LineSegment
+                    End="-288.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-191.44138671875,36.5,94.3827734375,9.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output5]"
+          TopLeft="272,1066.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102,0"
+              Start="0,0"
+              End="94.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.0586132812499969,5,94.3827734375,9.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output6]"
+          TopLeft="171.5,1192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5,95"
+              Start="0,0"
+              End="95.5,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="4,47.5" />
+                  <mssgle:LineSegment
+                    End="91.5,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.5,47.5"
+                    Point2="95.5,47.5"
+                    Point3="95.5,51.5" />
+                  <mssgle:LineSegment
+                    End="95.5,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8.8100390625,52.5,113.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output1]"
           TopLeft="989.5,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17355,28 +17929,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     Point3="-513.5,28.5" />
                   <mssgle:LineSegment
                     End="-513.5,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output1]"
-          TopLeft="216.5,130">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17411,6 +17963,96 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     Point3="185,25" />
                   <mssgle:LineSegment
                     End="185,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output2]"
+          TopLeft="216.5,130">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output4]"
+          TopLeft="479,854">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77,-9"
+              Start="0,0"
+              End="-69.5,-9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-34.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.5,0"
+                    Point2="-38.5,0"
+                    Point3="-38.5,-4" />
+                  <mssgle:LineSegment
+                    End="-38.5,-5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38.5,-5"
+                    Point2="-38.5,-9"
+                    Point3="-42.5,-9" />
+                  <mssgle:LineSegment
+                    End="-69.5,-9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output3]"
+          TopLeft="293,866">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142,92"
+              Start="0,0"
+              End="-142,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42"
+                    Point2="0,46"
+                    Point3="-4,46" />
+                  <mssgle:LineSegment
+                    End="-138,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138,46"
+                    Point2="-142,46"
+                    Point3="-142,50" />
+                  <mssgle:LineSegment
+                    End="-142,84.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17463,10 +18105,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="218,42"
-          Id="Package\Generuj Zamówienie Dania\uzyj xml do wysokosci rabatu"
-          TopLeft="184,824" />
         <EdgeLayout
           Id="Package\Generuj Zamówienie Dania.Paths[Aggregate Output 11]"
           TopLeft="938,241">
@@ -17489,293 +18127,57 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Generuj Zamówienie Dania\zrób zajętość względną"
-          TopLeft="479,833" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Merge Join Output2]"
-          TopLeft="748,864">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-80,-10"
-              Start="0,0"
-              End="-72.5,-10">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-36,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-36,0"
-                    Point2="-40,0"
-                    Point3="-40,-4" />
-                  <mssgle:LineSegment
-                    End="-40,-6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-40,-6"
-                    Point2="-40,-10"
-                    Point3="-44,-10" />
-                  <mssgle:LineSegment
-                    End="-72.5,-10" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output3]"
-          TopLeft="479,854">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-77,-9"
-              Start="0,0"
-              End="-69.5,-9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-34.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-34.5,0"
-                    Point2="-38.5,0"
-                    Point3="-38.5,-4" />
-                  <mssgle:LineSegment
-                    End="-38.5,-5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38.5,-5"
-                    Point2="-38.5,-9"
-                    Point3="-42.5,-9" />
-                  <mssgle:LineSegment
-                    End="-69.5,-9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Generuj Zamówienie Dania\+nazwa_dania - join key"
-          TopLeft="53,958" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Derived Column Output4]"
-          TopLeft="293,866">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-142,92"
-              Start="0,0"
-              End="-142,84.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42"
-                    Point2="0,46"
-                    Point3="-4,46" />
-                  <mssgle:LineSegment
-                    End="-138,46" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-138,46"
-                    Point2="-142,46"
-                    Point3="-142,50" />
-                  <mssgle:LineSegment
-                    End="-142,84.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="233,42"
-          Id="Package\Generuj Zamówienie Dania\+ hd_id_dania"
-          TopLeft="369,957" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output5]"
-          TopLeft="249,978.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120,0"
-              Start="0,0"
-              End="112.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="112.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.05861328125,5,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Generuj Zamówienie Dania\+ nazwa_restauracji - join key"
-          TopLeft="49,1046" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output6]"
-          TopLeft="485.5,999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-325,47"
-              Start="0,0"
-              End="-325,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
-                  <mssgle:LineSegment
-                    End="-321,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-321,23.5"
-                    Point2="-325,23.5"
-                    Point3="-325,27.5" />
-                  <mssgle:LineSegment
-                    End="-325,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-209.69138671875,28.5,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Generuj Zamówienie Dania\+ hd_id_restauracji"
-          TopLeft="374,1045" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output7]"
-          TopLeft="272,1066.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="102,0"
-              Start="0,0"
-              End="94.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="94.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.0586132812499969,5,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Generuj Zamówienie Dania\+ hd_id_kelnera"
-          TopLeft="93,1150" />
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output8]"
-          TopLeft="460,1087">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-288.5,63"
-              Start="0,0"
-              End="-288.5,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="-4,31.5" />
-                  <mssgle:LineSegment
-                    End="-284.5,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-284.5,31.5"
-                    Point2="-288.5,31.5"
-                    Point3="-288.5,35.5" />
-                  <mssgle:LineSegment
-                    End="-288.5,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-191.44138671875,36.5,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generuj Zamówienie Dania.Paths[Lookup Match Output9]"
-          TopLeft="171.5,1192">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.5,95"
-              Start="0,0"
-              End="95.5,87.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="4,47.5" />
-                  <mssgle:LineSegment
-                    End="91.5,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="91.5,47.5"
-                    Point2="95.5,47.5"
-                    Point3="95.5,51.5" />
-                  <mssgle:LineSegment
-                    End="95.5,87.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.558613281249997,52.5,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\Pozycje Zamówień">
+    design-time-name="Package\Generuj Zamówienie Dania\+ nazwa_restauracji - join key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Restauracje]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\+ hd_id_dania">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dania]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\Zamówienia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17811,6 +18213,101 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Płatności">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Platnosci]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\+ godziny otwarcia restauracji + liczba_miejsc">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Restauracje]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\Pozycje Zamówień">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\+ hd_id_restauracji">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Restauracje]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Data">
     <Properties>
       <Property>
@@ -17834,35 +18331,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\Zamówienia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\+ godziny otwarcia restauracji + liczba_miejsc">
+    design-time-name="Package\Generuj Zamówienie Dania\+nazwa_dania - join key">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Restauracje]</Value>
+          type="q3:string">[dbo].[Dania]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generuj Zamówienie Dania\+ hd_id_kelnera">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Kelnerzy]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17886,473 +18393,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\powiąż z tablicą wymiarów Płatności">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Platnosci]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\+nazwa_dania - join key">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dania]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\+ hd_id_dania">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dania]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\+ nazwa_restauracji - join key">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Restauracje]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\+ hd_id_restauracji">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Restauracje]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generuj Zamówienie Dania\+ hd_id_kelnera">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Kelnerzy]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\dołącz id_przelozonego">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="163,42"
-          Id="Package\dołącz id_przelozonego\Wszyscy Kelnerzy"
-          TopLeft="202,85" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\dołącz id_przelozonego\Tylko aktualni"
-          TopLeft="210,161" />
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[OLE DB Source Output]"
-          TopLeft="283,127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="267,42"
-          Id="Package\dołącz id_przelozonego\+ id_biz_przelozonego"
-          TopLeft="155,245" />
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[tylko nowe]"
-          TopLeft="285.5,203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.73873046875,12.4453125,47.4774609375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\dołącz id_przelozonego\Multicast"
-          TopLeft="230,336" />
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[Lookup Match Output]"
-          TopLeft="289.5,287">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-47.19138671875,15.9453125,94.3827734375,9.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="244,42"
-          Id="Package\dołącz id_przelozonego\sortuj po id_biz_przelozonego"
-          TopLeft="61,430" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\dołącz id_przelozonego\sortuj po id_biz_kelnera"
-          TopLeft="312,430" />
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[Multicast Output 1]"
-          TopLeft="271.666666666667,378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88.6666666666667,52"
-              Start="0,0"
-              End="-88.6666666666667,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.2071778140294" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2071778140294"
-                    Point2="0,21.2071778140294"
-                    Point3="-4,21.2071778140294" />
-                  <mssgle:LineSegment
-                    End="-84.6666666666667,21.2071778140294" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-84.6666666666667,21.2071778140294"
-                    Point2="-88.6666666666667,21.2071778140294"
-                    Point3="-88.6666666666667,25.2071778140294" />
-                  <mssgle:LineSegment
-                    End="-88.6666666666667,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[Multicast Output 2]"
-          TopLeft="309.333333333333,378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="99.1666666666667,52"
-              Start="0,0"
-              End="99.1666666666667,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.2071778140294" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2071778140294"
-                    Point2="0,21.2071778140294"
-                    Point3="4,21.2071778140294" />
-                  <mssgle:LineSegment
-                    End="95.1666666666667,21.2071778140294" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95.1666666666667,21.2071778140294"
-                    Point2="99.1666666666667,21.2071778140294"
-                    Point3="99.1666666666667,25.2071778140294" />
-                  <mssgle:LineSegment
-                    End="99.1666666666667,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="214,42"
-          Id="Package\dołącz id_przelozonego\kelner z hd_id_przelozonego"
-          TopLeft="225,530" />
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[Sort Output]"
-          TopLeft="183,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="149,58"
-              Start="0,0"
-              End="149,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="145,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="145,29"
-                    Point2="149,29"
-                    Point3="149,33" />
-                  <mssgle:LineSegment
-                    End="149,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[Sort Output1]"
-          TopLeft="408.5,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42.1666666666667,58"
-              Start="0,0"
-              End="-42.1666666666667,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5417439703154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5417439703154"
-                    Point2="0,34.5417439703154"
-                    Point3="-4,34.5417439703154" />
-                  <mssgle:LineSegment
-                    End="-38.1666666666667,34.5417439703154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38.1666666666667,34.5417439703154"
-                    Point2="-42.1666666666667,34.5417439703154"
-                    Point3="-42.1666666666667,38.5417439703154" />
-                  <mssgle:LineSegment
-                    End="-42.1666666666667,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="192,42"
-          Id="Package\dołącz id_przelozonego\update id_przelozonego"
-          TopLeft="247,621" />
-        <EdgeLayout
-          Id="Package\dołącz id_przelozonego.Paths[Merge Join Output]"
-          TopLeft="332,572">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11,49"
-              Start="0,0"
-              End="11,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
-                  <mssgle:LineSegment
-                    End="7,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7,24.5"
-                    Point2="11,24.5"
-                    Point3="11,28.5" />
-                  <mssgle:LineSegment
-                    End="11,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\dołącz id_przelozonego\Wszyscy Kelnerzy">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\dołącz id_przelozonego\+ id_biz_przelozonego">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Kelnerzy]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
